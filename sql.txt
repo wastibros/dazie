@@ -1,0 +1,123 @@
+
+CREATE DATABASE IF NOT EXISTS `student_tutor_ms`;
+
+USE `student_tutor_ms`;
+
+
+/* LOCATION */
+
+DROP TABLE IF EXISTS `location`;
+
+CREATE TABLE `location` (
+  `location_id` int(11) NOT NULL auto_increment,
+  `location` varchar(255) default NULL,
+  PRIMARY KEY  (`location_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+insert  into `location`(`location_id`,`location`) values (1,'Cork City'),(2,'Mallow');
+
+
+
+/* STUDENT */
+
+DROP TABLE IF EXISTS `student`;
+
+CREATE TABLE `student` (
+  `std_id` int(11) NOT NULL auto_increment,
+  `name` varchar(255) default NULL,
+  `email` varchar(255) default NULL,
+  `description` varchar(255) default NULL,
+  `location_id` int(11) default NULL,
+  `password` varchar(255) default NULL,
+  PRIMARY KEY  (`std_id`),
+  KEY `location_id` (`location_id`),
+  CONSTRAINT `student_ibfk_1` FOREIGN KEY (`location_id`) REFERENCES `location` (`location_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+insert  into `student`(`std_id`,`name`,`email`,`description`,`location_id`,`password`) values (1,'James Ryan','jryan24298@gmail.com',No comments,1,'123'),(2,'Billy','12345@gmail.com','6 years exp.',1,'yes');
+
+
+
+/* SUBJECT */
+
+DROP TABLE IF EXISTS `subject`;
+
+CREATE TABLE `subject` (
+  `subject_id` int(11) NOT NULL auto_increment,
+  `subject` varchar(255) default NULL,
+  PRIMARY KEY  (`subject_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+insert  into `subject`(`subject_id`,`subject`) values (1,'Maths'),(2,'English'),(3,'Science');
+
+
+
+/* TUTOR */
+
+DROP TABLE IF EXISTS `tutor`;
+
+CREATE TABLE `tutor` (
+  `tutor_id` int(11) NOT NULL auto_increment,
+  `name` varchar(255) default NULL,
+  `email` varchar(255) default NULL,
+  `password` varchar(255) default NULL,
+  `photo` varchar(255) default NULL,
+  `availbility` varchar(255) default NULL,
+  `location_id` int(11) default NULL,
+  `description` varchar(255) default NULL,
+  PRIMARY KEY  (`tutor_id`),
+  KEY `location_id` (`location_id`),
+  CONSTRAINT `tutor_ibfk_1` FOREIGN KEY (`location_id`) REFERENCES `location` (`location_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+insert  into `tutor`(`tutor_id`,`name`,`email`,`password`,`availbility`,`location_id`,`description`) values (1,'James Ryan','116451436@umail.ucc.ie','123','5 hours',2,'no'),(2,'Johnny','johnny@gmail.com','12345','5 hours',2,'No');
+
+
+
+/* TUTOR SUBJECT */
+
+DROP TABLE IF EXISTS `tutor_subject`;
+
+CREATE TABLE `tutor_subject` (
+  `tutor_id` int(11) default NULL,
+  `subject_id` int(11) default NULL,
+  KEY `subject_id` (`subject_id`),
+  KEY `tutor_id` (`tutor_id`),
+  CONSTRAINT `tutor_subject_ibfk_2` FOREIGN KEY (`tutor_id`) REFERENCES `tutor` (`tutor_id`),
+  CONSTRAINT `tutor_subject_ibfk_1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`subject_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+insert  into `tutor_subject`(`tutor_id`,`subject_id`) values (2,1),(2,2),(2,3);
+
+
+
+/* GROUP GRIND */
+
+DROP TABLE IF EXISTS `grind`;
+
+CREATE TABLE `grind` (
+  `grind_id` int(11) NOT NULL auto_increment,
+  `name` varchar(255) default NULL,
+  `subject_id` int(11) default NULL,
+  `location_id` int(11) default NULL,
+  `g_location` varchar(255) default NULL,
+  `date` varchar(255) default NULL,
+  `time` varchar(255) default NULL,
+  `price` varchar(255) default NULL,
+  `capacity` varchar(255) default NULL,
+  PRIMARY KEY  (`grind_id`),
+  KEY `subject_id` (`subject_id`),
+  KEY `location_id` (`location_id`),
+  CONSTRAINT `grind_ibfk_1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`subject_id`),
+  CONSTRAINT `grind_ibfk_2` FOREIGN KEY (`location_id`) REFERENCES `location` (`location_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+insert  into `grind`(`grind_id`,`name`,`subject_id`,`location_id`,`g_location`,`date`,`time`,`price`,`capacity` ) values (1,'James','1','1', 'At the School','5/5/20','16:00','€20', '12');
+
+
+
+

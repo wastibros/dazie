@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <servlet>
+        <servlet-name>GrindServlet</servlet-name>
+        <servlet-class>servlets.GrindServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetNewMessages</servlet-name>
+        <servlet-class>servlets.GetNewMessages</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SendMessage</servlet-name>
+        <servlet-class>servlets.SendMessage</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TutorProfilePic</servlet-name>
+        <servlet-class>servlets.TutorProfilePic</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GrindServlet</servlet-name>
+        <url-pattern>/GrindServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetNewMessages</servlet-name>
+        <url-pattern>/GetNewMessages</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SendMessage</servlet-name>
+        <url-pattern>/SendMessage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TutorProfilePic</servlet-name>
+        <url-pattern>/TutorProfilePic</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>

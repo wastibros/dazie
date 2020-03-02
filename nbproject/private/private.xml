@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/A12/Desktop/Iteration5/Iteration5/web/searchTutor.jsp</file>
+            <file>file:/C:/Users/A12/Desktop/Iteration5/Iteration5/src/java/dbmanager/TutorDbManager.java</file>
+            <file>file:/C:/Users/A12/Desktop/Iteration5/Iteration5/src/java/servlets/SendMessage.java</file>
+            <file>file:/C:/Users/A12/Desktop/Iteration5/Iteration5/web/addGrind.jsp</file>
+            <file>file:/C:/Users/A12/Desktop/Iteration5/Iteration5/src/java/dbmanager/DBConnection.java</file>
+            <file>file:/C:/Users/A12/Desktop/Iteration5/Iteration5/web/editTutor.jsp</file>
+            <file>file:/C:/Users/A12/Desktop/Iteration5/Iteration5/web/editStudent.jsp</file>
+            <file>file:/C:/Users/A12/Desktop/Iteration5/Iteration5/src/java/servlets/RecieveMessageServlet.java</file>
+            <file>file:/C:/Users/A12/Desktop/Iteration5/Iteration5/web/searchStudent.jsp</file>
+            <file>file:/C:/Users/A12/Desktop/Iteration5/Iteration5/web/messanger.jsp</file>
+            <file>file:/C:/Users/A12/Desktop/Iteration5/Iteration5/src/java/servlets/GrindServlet.java</file>
+            <file>file:/C:/Users/A12/Desktop/Iteration5/Iteration5/src/java/dbmanager/MessageDbManager.java</file>
+        </group>
+    </open-files>
+</project-private>
